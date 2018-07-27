@@ -6,6 +6,7 @@ import { AuthComponent } from './auth/auth.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AppRoutingModule } from './/app-routing.module';
 
+
 @NgModule({
   declarations: [
     AppComponent,
