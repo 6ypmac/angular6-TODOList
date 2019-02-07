@@ -1,0 +1,27 @@
+<div fxLayout="column">
+
+  <mat-toolbar color="primary" role="heading" class="dashboard-header-box mat-elevation-z4">
+    <app-header fxLayout="row" fxLayoutAlign="center center"></app-header>
+  </mat-toolbar>
+
+  <mat-drawer-container class="dashboard-content-box">
+    <mat-drawer mode="side" opened class="mat-elevation-z4">
+      <app-sidebar></app-sidebar>
+    </mat-drawer>
+    <mat-drawer-content class="dashboard-content">
+      <router-outlet></router-outlet>
+    </mat-drawer-content>
+  </mat-drawer-container>
+
+  <!--<li>
+    <a routerLink="/dashboard" [queryParams]="{ view: 'todos'}" routerLinkActive="active">Todos</a>
+  </li>
+  <li>
+    <a routerLink="/dashboard" [queryParams]="{ view: 'labels'}" routerLinkActive="active">Labels</a>
+  </li>
+  <li>
+    <a routerLink="/dashboard" [queryParams]="{ view: 'theming'}" routerLinkActive="active">Theming</a>
+  </li>
+  <button (click)="goToLabels('labels')">Go To</button>-->
+</div>
+

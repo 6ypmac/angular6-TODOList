@@ -1,1 +1,142 @@
-/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/theming';
+
+// Custom theme
+// ============
+
+@include mat-core();
+
+// Colors
+
+$todo-app-primary: mat-palette($mat-indigo);
+$todo-app-accent:  mat-palette($mat-pink, A200, A100, A400);
+
+$todo-app-warn:    mat-palette($mat-red);
+
+$todo-app-theme:   mat-light-theme($todo-app-primary, $todo-app-accent, $todo-app-warn);
+
+$todo-list-item-hover-background: map-get($mat-light-theme-background, hover);
+$todo-list-item-active-background: map-get($mat-teal, A700);
+$todo-theme-foreground: #eef5f9;
+
+$drawer-container-background-color: $todo-theme-foreground;
+
+@include angular-material-theme($todo-app-theme);
+
+// Typography
+
+$todo-font-size-base: 16px;
+
+$todo-app-typography: mat-typography-config(
+  $body-2: mat-typography-level($todo-font-size-base, 24px, 400),
+  $body-1: mat-typography-level($todo-font-size-base, 24px, 400),
+  $button: mat-typography-level($todo-font-size-base, $todo-font-size-base, 500)
+);
+
+@include angular-material-typography($todo-app-typography);
+
+// CustomStyles
+// ============
+
+html, body { height: 100%; }
+body { margin: 0;}
+
+.example-fill-remaining-space {
+  flex: 1 1 auto;
+}
+
+.mat-icon {
+  &.fa {
+    width: 1em;
+    height: 1em;
+    line-height: 1;
+  }
+}
+
+// Auth
+// ====
+
+.auth-wrapper {
+  background-color: $todo-theme-foreground;
+
+  .mat-button-wrapper {
+    display: flex;
+    align-items: center;
+
+    .mat-icon {
+      padding-right: 0.5em;
+    }
+  }
+
+  .mat-icon {
+
+    &.fa {
+      font-size: 1.5em;
+    }
+  }
+}
+
+.auth-signup-container {
+  width: 300px;
+}
+
+// Dashboard
+// =========
+
+.dashboard-header-box {
+  z-index: 9;
+}
+
+app-header {
+  width: 100%;
+}
+
+.dashboard-content-box {
+  height: calc(100vh - 64px);
+}
+
+mat-drawer {
+  width: 240px;
+}
+
+%todo-sidebar-list-item-active {
+  color: #fff;
+  font-weight: 500;
+  background-color: $todo-list-item-active-background;
+}
+
+.todo-sidebar {
+
+  mat-list-item {
+    border-bottom: 1px solid $todo-list-item-hover-background;
+
+    &.active {
+      @extend %todo-sidebar-list-item-active;
+
+      &:hover,
+      &:active,
+      &:focus {
+        @extend %todo-sidebar-list-item-active;
+      }
+
+      .todo-sidebar-item-text {
+        font-weight: 500;
+      }
+
+      mat-icon {
+        opacity: 1;
+      }
+    }
+
+    mat-icon {
+      opacity: .25;
+    }
+
+    .mat-list-text {padding-left: 8px!important;}
+  }
+}
+
+.dashboard-content {
+  padding: 1rem 2rem;
+}
+
+

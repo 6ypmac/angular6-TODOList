@@ -27,7 +27,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/assets/styles.scss"
+              "node_modules/font-awesome/scss/font-awesome.scss",
+              "src/assets/styles/styles.scss"
             ],
             "scripts": []
           },
@@ -76,6 +77,9 @@
             "tsConfig": "src/tsconfig.spec.json",
             "karmaConfig": "src/karma.conf.js",
             "styles": [
+              {
+                "input": "node_modules/@angular/material/prebuilt-themes/indigo-pink.css"
+              },
               "src/styles.scss"
             ],
             "scripts": [],
