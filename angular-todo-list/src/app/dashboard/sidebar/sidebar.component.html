@@ -1,3 +1,6 @@
-<p>
-  sidebar works!
-</p>
+<mat-nav-list class="todo-sidebar">
+  <mat-list-item routerLink="/dashboard/{{link.value}}" routerLinkActive="active" *ngFor="let link of listOfSidebarLinks">
+    <mat-icon matListIcon>{{link.icon}}</mat-icon>
+    <span matLine class="todo-sidebar-item-text">{{link.label}}</span>
+  </mat-list-item>
+</mat-nav-list>

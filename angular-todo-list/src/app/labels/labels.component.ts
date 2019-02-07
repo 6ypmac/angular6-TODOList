@@ -10,6 +10,7 @@ export class LabelsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+
   }
 
 }
